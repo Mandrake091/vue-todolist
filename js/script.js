@@ -50,11 +50,12 @@ const app = new Vue({
 
   methods: {
     aggiungiIngrediente() {
+
       const ingrediente = {
         check: false,
-        nomeIngrediente: this.nuovoIngrediente,
+        nomeIngrediente: this.nuovoIngrediente.charAt(0).toUpperCase() + this.nuovoIngrediente.slice(1),
       };
-      this.tiramisu.push(ingrediente);
+      this.tiramisu.push(ingrediente) ;
       this.nuovoIngrediente = "";
     },
     rimuovi(i) {

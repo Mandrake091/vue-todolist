@@ -15,6 +15,17 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -35,21 +46,15 @@
         <div class="row">
           <div class="col-12">
             <ul>
-              <div class="form-check">
-
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Default checkbox
-                </label>
-
-              </div>
-
               <li v-if="tiramisu.length ===0">La lista è vuota!</li>
-              <li class="fs-4"
+              <li
                 :class="{'text-decoration-line-through' : ingrediente.check}"
                 v-for="(ingrediente, index) in tiramisu"
-                :key="index">
-                <span @click="ingrediente.check = !ingrediente.check">{{ingrediente.nomeIngrediente}}</span>
+                :key="index"
+              >
+                <span @click="ingrediente.check = !ingrediente.check"
+                  >{{ingrediente.nomeIngrediente}}</span
+                >
                 <i @click="rimuovi(index)" class="fa-solid fa-xmark"></i>
               </li>
             </ul>
