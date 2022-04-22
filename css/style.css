@@ -36,4 +36,14 @@ div.container{
 li{
     cursor:pointer
 }
-
+.container{
+    background-color: rgba(83, 83, 83, 0.631);
+    border-radius: 30px 0 30px 0;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.468);
+}
+.input-group{
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.468);
+}
+input{
+  
+}

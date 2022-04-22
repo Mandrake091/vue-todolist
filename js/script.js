@@ -46,22 +46,30 @@ const app = new Vue({
       },
     ],
     nuovoIngrediente: "",
+    checked: [],
   },
 
   methods: {
     aggiungiIngrediente() {
-
       const ingrediente = {
         check: false,
-        nomeIngrediente: this.nuovoIngrediente.charAt(0).toUpperCase() + this.nuovoIngrediente.slice(1),
+        nomeIngrediente:
+          this.nuovoIngrediente.charAt(0).toUpperCase() +
+          this.nuovoIngrediente.slice(1),
       };
-      this.tiramisu.push(ingrediente) ;
+      this.tiramisu.push(ingrediente);
       this.nuovoIngrediente = "";
     },
     rimuovi(i) {
       this.tiramisu.splice(i, 1);
     },
+    pulisciLista() {
+      this.tiramisu = [];
+    },
+    show() {
+      this.nuovoIngrediente.push(this.checked)
+      console.log(this.checked)
+      
+    },
   },
 });
-
-

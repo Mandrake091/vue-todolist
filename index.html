@@ -41,27 +41,14 @@
 
       <div class="container">
         <div class="row">
-          <h1 class="text-center">ToDo List</h1>
+          <h1 class="text-center pt-3">ToDo List</h1>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <ul>
-              <li v-if="tiramisu.length ===0">La lista è vuota!</li>
-              <li
-                :class="{'text-decoration-line-through' : ingrediente.check}"
-                v-for="(ingrediente, index) in tiramisu"
-                :key="index"
-              >
-                <span @click="ingrediente.check = !ingrediente.check"
-                  >{{ingrediente.nomeIngrediente}}</span
-                >
-                <i @click="rimuovi(index)" class="fa-solid fa-xmark"></i>
-              </li>
-            </ul>
+        <div class="row justify-content-center">
+          <div class="col-2 text-end">
+            <button @click="pulisciLista()" class="btn btn-success">Clean</button>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
+          
+          <div class="col-8">
             <div class="input-group mb-3">
               <input
                 type="text"
@@ -74,13 +61,42 @@
               />
               <button
                 @click="aggiungiIngrediente"
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-secondary m-0"
                 type="button"
                 id="button-addon2"
               >
-                Add
+                <i class="fa-solid fa-plus"></i>
               </button>
             </div>
+          </div>
+          <div class="col-2 text-start">
+            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-12 pb-2">
+            <div
+              v-for="(ingrediente, index) in tiramisu"
+              :key="index"
+              class="form-check"
+            >
+              <input
+              @click="show"
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                {{ingrediente.nomeIngrediente}}
+              </label>
+            </div>
+
+            <!-- <span @click="ingrediente.check = !ingrediente.check"
+                  >{{ingrediente.nomeIngrediente}}</span
+                >
+                <i @click="rimuovi(index)" class="fa-solid fa-xmark"></i> -->
           </div>
         </div>
       </div>
