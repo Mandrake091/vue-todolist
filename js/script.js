@@ -64,12 +64,21 @@ const app = new Vue({
       this.tiramisu.splice(i, 1);
     },
     pulisciLista() {
+      this.checked = [];
       this.tiramisu = [];
     },
-    show() {
-      this.nuovoIngrediente.push(this.checked)
-      console.log(this.checked)
-      
+    check() {
+      this.checked.push(this.nomeIngrediente);
+      this.tiramisu.check = true;
+      console.log(this.checked);
+    },
+    eraseChecked() {
+      for (let i = 0; i < this.tiramisu.length; i++) {
+        if (this.check === true) {
+          this.tiramisu[i] = "";
+        }
+        console.log(this.tiramisu.check)
+      }
     },
   },
 });
